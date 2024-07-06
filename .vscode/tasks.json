@@ -1,0 +1,32 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build and Run Pong",
+            "type": "shell",
+            "command": "/usr/bin/clang++",
+            "args": [
+                "-std=c++17",
+                "${workspaceFolder}/pong.cpp",
+                "-o",
+                "${workspaceFolder}/pong",
+                "-I/opt/homebrew/Cellar/sdl2/2.30.3/include/SDL2",  // Updated SDL2 include path
+                "-L/opt/homebrew/Cellar/sdl2/2.30.3/lib",           // SDL2 library path
+                "-lsdl2"                                            // Link SDL2 library
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}
